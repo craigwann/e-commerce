@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
-
+<% @products.each do |product| %>
+  <h3><%= product.name %></h3>
+  <h3><%= product.price %></h3>
+<% end %>
 <table>
   <thead>
     <tr>
