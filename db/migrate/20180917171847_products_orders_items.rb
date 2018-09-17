@@ -2,13 +2,13 @@ class ProductsOrdersItems < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
       t.string :name
-      t.big_decimal :price
+      t.decimal :price, :precision => 8, :scale => 2
       t.timestamps
     end
 
     create_table :orders do |t|
       t.string :status
-      t.big_decimal :total_price
+      t.decimal :total_price, :precision => 8, :scale => 2
       t.integer :user_id
       t.timestamps
     end
