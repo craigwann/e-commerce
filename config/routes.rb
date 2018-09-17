@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       passwords: 'users/passwords',
       registrations: 'users/registrations'
   }
-  root to: "products#index"
+  root :to => 'products#index'
   resources :orders
   resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
