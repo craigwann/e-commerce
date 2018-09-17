@@ -12,11 +12,13 @@
   <body>
 
     <% if can? :manage, User %>
+    <div class="alert alert-success" role="alert">
     	<p>Visible only for superadmins and supervisors! Using CanCanCan </p>
+    </div>
     <% end %>
 
     <% if current_user.nil? %>
-    	<%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
+    	<%= link_to new_user_session_path, class: 'login-button' do %>Sign in  <% end %>
     <% else %>
     	<%= link_to rails_admin_path, class: 'login-button' do %>Dashboard<% end %>
     <% end %>
