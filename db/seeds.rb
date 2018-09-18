@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
 Product.destroy_all
 # Order.destroy_all
 
@@ -13,6 +13,11 @@ Product.destroy_all
   Product.create!(name: Faker::Beer.name,
     price: Faker::Number.decimal(2, 2))
 end
+
+User.create!( email: "admin@admin.com", password: "password", superadmin_role: true )
+User.create!( email: "visor@visor.com", password: "password", supervisor_role: true )
+User.create!( email: "test@test.com", password: "password", user_role: true )
+
 
 # 30.times do |index|
 #   Product.create!(name: Faker::Food.fruits,
@@ -29,3 +34,4 @@ end
 # end
 
 p "Created #{Product.count} products"
+p "Created #{User.count} users"
